@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Emily Sánchez · Portafolio</title>
+<meta name="description" content="Portafolio de Emily Sánchez: creativa, empática y proactiva. Liderazgo, voluntariado, tecnología y propósito.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#fbf6f1; --paper:#fffdfa; --blush:#f8e9ed; --rose:#c9889a; --rose2:#a65d74; --gold:#b8975a;
+  --plum:#3b2433; --muted:#7a6670; --line:#e8dcd2;
+  --head:'Cormorant Garamond',Georgia,serif; --body:'Jost',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:20px}
+body{font-family:var(--body);font-weight:300;background:var(--cream);color:var(--plum);line-height:1.85;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--rose2);outline-offset:3px}
+h1,h2,h3{font-family:var(--head);font-weight:500;line-height:1.1}
+.wrap{width:min(960px,86%);margin:0 auto}
+main{margin-left:272px}
+section{padding:112px 0;position:relative}
+.ic{width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;flex:none}
+
+/* ---------- Barra lateral ---------- */
+#lateral{position:fixed;inset:0 auto 0 0;width:272px;background:var(--paper);border-right:1px solid var(--line);padding:44px 32px 32px;display:flex;flex-direction:column;z-index:60}
+.mono{width:84px;height:84px;border-radius:50%;border:1px solid var(--gold);display:grid;place-items:center;margin-bottom:22px;color:var(--rose)}
+.mono svg{width:46px;height:46px}
+.nombre{font-family:var(--head);font-size:2rem;font-style:italic;line-height:1.05}
+.sub{letter-spacing:.24em;text-transform:uppercase;font-size:.66rem;color:var(--gold);margin-top:10px;font-weight:400}
+#menu{margin-top:34px;list-style:none}
+#menu a{display:flex;gap:14px;align-items:baseline;padding:9px 0;border-bottom:1px solid var(--line);font-size:.9rem;color:var(--muted);transition:.25s}
+#menu a span{font-family:var(--head);color:var(--gold);font-size:1rem;width:22px}
+#menu a:hover,#menu a.activo{color:var(--rose2);padding-left:8px}
+.lat-pie{margin-top:auto;font-size:.78rem;color:var(--muted);letter-spacing:.05em}
+.btn-menu{display:none;background:none;border:1px solid var(--line);color:var(--plum);padding:8px 18px;font:inherit;font-size:.82rem;letter-spacing:.14em;text-transform:uppercase;cursor:pointer}
+
+.btn{display:inline-block;background:var(--rose2);color:#fff;font-weight:400;padding:14px 34px;border:1px solid var(--rose2);border-radius:2px;letter-spacing:.14em;text-transform:uppercase;font-size:.8rem;font-family:var(--body);transition:.3s;cursor:pointer}
+.btn:hover{background:transparent;color:var(--rose2)}
+.btn.ghost{background:transparent;color:var(--plum);border-color:var(--gold)}
+.btn.ghost:hover{border-color:var(--rose2);color:var(--rose2)}
+
+/* ---------- Flores flotantes ---------- */
+#jardin{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:30}
+.fl{position:absolute;top:-80px;opacity:.55;animation:cae linear infinite}
+.fl svg{display:block;animation:mece ease-in-out infinite alternate}
+@keyframes cae{to{transform:translateY(calc(100vh + 160px))}}
+@keyframes mece{from{transform:translateX(-30px) rotate(-28deg)}to{transform:translateX(30px) rotate(28deg)}}
+
+/* ---------- Portada ---------- */
+#inicio{min-height:100vh;display:flex;align-items:center;padding:80px 0;overflow:hidden;background:radial-gradient(ellipse at 85% 20%,var(--blush),transparent 60%),var(--cream)}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:64px;align-items:center;position:relative}
+.eyebrow{letter-spacing:.3em;text-transform:uppercase;font-size:.72rem;color:var(--gold);font-weight:400}
+.hero h1{font-size:clamp(3.6rem,7.4vw,6.6rem);font-style:italic;margin:16px 0 20px;color:var(--plum)}
+.tres{display:flex;flex-wrap:wrap;margin-bottom:24px;font-size:.92rem;letter-spacing:.18em;text-transform:uppercase;color:var(--rose2)}
+.tres span{padding:0 20px;border-left:1px solid var(--gold)}
+.tres span:first-child{padding-left:0;border:0}
+.hero .frase{font-family:var(--head);font-style:italic;font-size:1.5rem;color:var(--muted);max-width:480px;margin-bottom:34px;line-height:1.4}
+.acciones{display:flex;gap:16px;flex-wrap:wrap}
+.arco-caja{position:relative;width:min(340px,100%);margin:0 auto}
+.arco-caja::before{content:"";position:absolute;inset:22px -22px -22px 22px;background:var(--blush);border-radius:200px 200px 6px 6px}
+.arco{position:relative;border:1px solid var(--gold);border-radius:200px 200px 6px 6px;padding:12px;background:var(--paper)}
+.arco .ph{aspect-ratio:3/4;border-radius:190px 190px 2px 2px}
+.rama{position:absolute;pointer-events:none;width:170px;height:272px}
+.rama.r1{right:-70px;bottom:-80px;opacity:.9;transform:rotate(18deg)}
+
+.ph{position:relative;background:linear-gradient(135deg,#f3e4e4,#efe6da);display:grid;place-content:center;text-align:center;color:var(--rose2);font-size:.8rem;overflow:hidden;letter-spacing:.04em}
+.ph::after{content:attr(data-file);padding:0 8px}
+.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+
+/* ---------- Encabezados de sección ---------- */
+.enc{display:flex;align-items:center;gap:20px;margin-bottom:52px}
+.enc span{font-family:var(--head);font-size:1.15rem;color:var(--gold);letter-spacing:.12em}
+.enc h2{font-size:clamp(2.2rem,4.4vw,3.4rem);font-style:italic}
+.enc::after{content:"";flex:1;height:1px;background:var(--line)}
+
+/* ---------- Sobre mí ---------- */
+.sobre{display:grid;grid-template-columns:.85fr 1.15fr;gap:64px;align-items:start}
+.sobre .arco-caja{position:sticky;top:60px}
+.sobre p{margin-bottom:20px;font-size:1.04rem;max-width:56ch}
+.sobre p:first-of-type::first-letter{font-family:var(--head);font-size:4.4rem;float:left;line-height:.8;padding:6px 12px 0 0;color:var(--rose2);font-style:italic}
+
+.banda{background:var(--blush);padding:84px 0;text-align:center;margin-left:272px;position:relative}
+.banda blockquote{font-family:var(--head);font-style:italic;font-size:clamp(1.7rem,3.6vw,2.6rem);line-height:1.35;max-width:780px;margin:0 auto;padding:0 6%}
+.banda .adorno{display:flex;justify-content:center;align-items:center;gap:16px;color:var(--rose);margin-bottom:24px}
+.banda .adorno i{width:70px;height:1px;background:var(--gold)}
+.banda .adorno svg{width:28px;height:28px}
+
+/* ---------- Habilidades ---------- */
+.grupo{margin-bottom:44px}
+.grupo>h3{font-size:.74rem;font-family:var(--body);letter-spacing:.28em;text-transform:uppercase;color:var(--gold);font-weight:400;margin-bottom:6px}
+.fila{display:grid;grid-template-columns:240px 1fr;gap:28px;padding:20px 0;border-bottom:1px solid var(--line);align-items:baseline}
+.fila h4{font-family:var(--head);font-size:1.5rem;font-weight:500;font-style:italic}
+.fila p{color:var(--muted)}
+.idiomas{display:flex;gap:28px;align-items:baseline;flex-wrap:wrap}
+.idiomas b{font-family:var(--head);font-size:1.5rem;font-style:italic;font-weight:500}
+.idiomas span{letter-spacing:.2em;text-transform:uppercase;font-size:.8rem;color:var(--rose2)}
+
+/* ---------- Certificaciones ---------- */
+.certs{display:grid;grid-template-columns:repeat(4,1fr);gap:28px}
+.cert{border-top:1px solid var(--gold);padding-top:18px}
+.cert i{font-family:var(--head);font-style:italic;color:var(--rose);font-size:1.4rem;display:block;margin-bottom:6px}
+.cert h3{font-size:1.35rem;margin-bottom:4px}
+.cert small{color:var(--muted);font-size:.88rem;display:block}
+
+/* ---------- Trayectoria (línea de tiempo) ---------- */
+.linea{position:relative;padding-left:56px}
+.linea::before{content:"";position:absolute;left:15px;top:8px;bottom:8px;width:1px;background:var(--gold);opacity:.6}
+.hito{position:relative;display:grid;grid-template-columns:250px 1fr;gap:34px;margin-bottom:64px;align-items:start}
+.hito:last-child{margin-bottom:0}
+.hito>svg{position:absolute;left:-56px;top:-2px;width:32px;height:32px;color:var(--rose);background:var(--cream);padding:2px}
+.hito .ph{aspect-ratio:4/3;border-radius:4px;border:1px solid var(--line)}
+.hito .lugar{letter-spacing:.2em;text-transform:uppercase;font-size:.7rem;color:var(--rose2);font-weight:400;margin-bottom:6px}
+.hito h3{font-size:1.9rem;font-style:italic;margin-bottom:10px}
+.hito p{color:var(--muted);max-width:52ch}
+
+/* ---------- Galería ---------- */
+.galeria{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:170px;gap:12px}
+.galeria .ph{border-radius:4px}
+.galeria .g1{grid-column:span 2;grid-row:span 2}
+.galeria .g5{grid-column:span 2}
+
+/* ---------- Mi futuro ---------- */
+.futuro-sec{background:var(--plum);color:var(--cream)}
+.futuro-sec .enc span{color:var(--gold)}
+.futuro-sec .enc::after{background:rgba(255,255,255,.2)}
+.futuro{display:grid;grid-template-columns:1.15fr .85fr;gap:64px;align-items:center}
+.futuro p{margin-bottom:22px;max-width:56ch;color:#e9dde0}
+.metas{list-style:none;display:flex;flex-wrap:wrap;gap:0;margin:26px 0;letter-spacing:.18em;text-transform:uppercase;font-size:.78rem;color:var(--gold)}
+.metas li{padding:0 20px;border-left:1px solid rgba(184,151,90,.6)}
+.metas li:first-child{padding-left:0;border:0}
+.futuro .cierre{font-family:var(--head);font-style:italic;font-size:1.5rem;line-height:1.4;color:#fff}
+.futuro-sec .arco-caja::before{background:rgba(201,136,154,.25)}
+.futuro-sec .arco{background:transparent}
+.futuro-sec .ph{color:var(--gold);background:rgba(255,255,255,.06)}
+
+/* ---------- Mi historia ---------- */
+.marco{border:1px solid var(--gold);padding:12px;background:var(--paper)}
+.video-caja{aspect-ratio:16/9}
+.video-caja iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.enlace{display:inline-block;margin-top:26px;font-family:var(--head);font-style:italic;font-size:1.4rem;color:var(--rose2);border-bottom:1px solid var(--gold);padding-bottom:2px;transition:.25s}
+.enlace:hover{color:var(--plum)}
+
+/* ---------- Contacto ---------- */
+#contacto{background:linear-gradient(180deg,var(--cream),var(--blush));overflow:hidden}
+.contacto-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:64px;position:relative}
+.dato{display:flex;gap:18px;align-items:center;padding:18px 0;border-bottom:1px solid var(--line)}
+.dato .ic{font-size:1.4rem;color:var(--rose)}
+.dato small{display:block;letter-spacing:.2em;text-transform:uppercase;font-size:.66rem;color:var(--gold)}
+a.dato:hover .t{color:var(--rose2)}
+form{display:grid;gap:22px}
+input,textarea{width:100%;background:transparent;border:0;border-bottom:1px solid var(--gold);color:var(--plum);padding:12px 2px;font:inherit;font-size:1.02rem}
+input:focus,textarea:focus{outline:none;border-bottom-color:var(--rose2)}
+::placeholder{color:#a18f98}
+form .btn{justify-self:start}
+
+footer{padding:60px 0 40px;text-align:center;margin-left:272px;border-top:1px solid var(--line);background:var(--paper)}
+footer .nombre{font-size:2.2rem}
+footer .adorno{display:flex;justify-content:center;align-items:center;gap:14px;color:var(--rose);margin:14px 0}
+footer .adorno i{width:60px;height:1px;background:var(--gold)}
+footer .adorno svg{width:22px;height:22px}
+footer p{color:var(--muted);font-size:.9rem}
+
+/* ---------- Móvil ---------- */
+@media(max-width:960px){
+  main,.banda,footer{margin-left:0}
+  #lateral{inset:0 0 auto 0;width:100%;height:62px;flex-direction:row;align-items:center;justify-content:space-between;padding:0 5%;border-right:0;border-bottom:1px solid var(--line)}
+  .mono,.sub,.lat-pie{display:none}
+  .nombre{font-size:1.5rem;margin:0}
+  .btn-menu{display:block}
+  #menu{display:none;position:absolute;top:100%;left:0;right:0;background:var(--paper);margin:0;padding:6px 5% 14px;border-bottom:1px solid var(--line)}
+  #menu.abierto{display:block}
+  section{padding:80px 0}
+  #inicio{padding-top:110px}
+  .hero-grid,.sobre,.futuro,.contacto-grid{grid-template-columns:1fr;gap:48px}
+  .arco-caja{order:-1;width:min(300px,86%)}
+  .sobre .arco-caja{position:relative;top:0;order:0}
+  .rama.r1{display:none}
+  .fila{grid-template-columns:1fr;gap:4px}
+  .certs{grid-template-columns:repeat(2,1fr)}
+  .hito{grid-template-columns:1fr;gap:16px}
+  .galeria{grid-template-columns:repeat(2,1fr);grid-auto-rows:150px}
+  .galeria .g1{grid-column:span 2}
+}
+@media(prefers-reduced-motion:reduce){#jardin{display:none}*,*::before,*::after{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <!-- flor rellena -->
+  <symbol id="fp" viewBox="0 0 100 100"><g fill="currentColor"><ellipse cx="50" cy="24" rx="14" ry="23"/><ellipse cx="50" cy="24" rx="14" ry="23" transform="rotate(60 50 50)"/><ellipse cx="50" cy="24" rx="14" ry="23" transform="rotate(120 50 50)"/><ellipse cx="50" cy="24" rx="14" ry="23" transform="rotate(180 50 50)"/><ellipse cx="50" cy="24" rx="14" ry="23" transform="rotate(240 50 50)"/><ellipse cx="50" cy="24" rx="14" ry="23" transform="rotate(300 50 50)"/></g><circle cx="50" cy="50" r="9" fill="#e4c98a"/></symbol>
+  <!-- flor de líneas -->
+  <symbol id="fl" viewBox="0 0 100 100"><g fill="none" stroke="currentColor" stroke-width="2.6"><ellipse cx="50" cy="24" rx="12" ry="22"/><ellipse cx="50" cy="24" rx="12" ry="22" transform="rotate(72 50 50)"/><ellipse cx="50" cy="24" rx="12" ry="22" transform="rotate(144 50 50)"/><ellipse cx="50" cy="24" rx="12" ry="22" transform="rotate(216 50 50)"/><ellipse cx="50" cy="24" rx="12" ry="22" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="6"/></g></symbol>
+  <!-- rama con flores -->
+  <symbol id="rama" viewBox="0 0 200 320">
+    <path d="M100 312C92 240 128 190 104 130S112 50 100 22" fill="none" stroke="#8fa593" stroke-width="2.5"/>
+    <g fill="#a9bfae"><ellipse cx="80" cy="250" rx="8" ry="22" transform="rotate(-42 80 250)"/><ellipse cx="122" cy="205" rx="8" ry="22" transform="rotate(42 122 205)"/><ellipse cx="84" cy="165" rx="7" ry="19" transform="rotate(-40 84 165)"/><ellipse cx="116" cy="118" rx="7" ry="19" transform="rotate(40 116 118)"/></g>
+    <use href="#fp" x="56" y="-22" width="88" height="88" style="color:#d9a0b0"/>
+    <use href="#fp" x="104" y="70" width="52" height="52" style="color:#ecc3cf"/>
+    <use href="#fp" x="48" y="118" width="46" height="46" style="color:#e2b0be"/>
+  </symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z"/></symbol>
+  <symbol id="i-cam" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="5"/><circle cx="12" cy="12" r="4"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s6-5.5 6-11a6 6 0 0 0-12 0c0 5.5 6 11 6 11z"/><circle cx="12" cy="10" r="2"/></symbol>
+</svg>
+
+<div id="jardin" aria-hidden="true"></div>
+
+<!-- ============ BARRA LATERAL ============ -->
+<aside id="lateral">
+  <div class="mono"><svg><use href="#fl"/></svg></div>
+  <a href="#inicio"><div class="nombre">Emily<br>Sánchez</div></a>
+  <div class="sub">Marca personal</div>
+  <button class="btn-menu" id="btn-menu" aria-expanded="false" aria-controls="menu">Menú</button>
+  <ul id="menu">
+    <li><a href="#sobre-mi"><span>01</span>Sobre mí</a></li>
+    <li><a href="#habilidades"><span>02</span>Habilidades</a></li>
+    <li><a href="#certificaciones"><span>03</span>Certificaciones</a></li>
+    <li><a href="#experiencia"><span>04</span>Trayectoria</a></li>
+    <li><a href="#galeria"><span>05</span>Galería</a></li>
+    <li><a href="#futuro"><span>06</span>Mi futuro</a></li>
+    <li><a href="#historia"><span>07</span>Mi historia</a></li>
+    <li><a href="#contacto"><span>08</span>Deja tu mensaje</a></li>
+  </ul>
+  <div class="lat-pie">Panamá</div>
+</aside>
+
+<main>
+<!-- ============ PORTADA ============ -->
+<section id="inicio" class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow">Estudiante de Ciencias · Programa ¡Supérate! Alberto Motta</div>
+      <h1>Emily<br>Sánchez</h1>
+      <div class="tres"><span>Creativa</span><span>Empática</span><span>Proactiva</span></div>
+      <p class="frase">“El éxito cobra sentido cuando crea oportunidades para los demás.”</p>
+      <div class="acciones">
+        <a class="btn" href="#sobre-mi">Conóceme</a>
+        <a class="btn ghost" href="#contacto">Deja tu mensaje</a>
+      </div>
+    </div>
+    <div class="arco-caja">
+      <svg class="rama r1" viewBox="0 0 200 320"><use href="#rama"/></svg>
+      <div class="arco">
+        <!-- FOTO: reemplaza el archivo img/foto-perfil.jpg -->
+        <div class="ph" data-file="img/foto-perfil.jpg"><img src="img/foto-perfil.jpg" alt="Emily Sánchez" onerror="this.remove()"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 01 SOBRE MÍ ============ -->
+<section id="sobre-mi">
+  <div class="wrap">
+    <div class="enc"><span>01</span><h2>Sobre mí</h2></div>
+    <div class="sobre">
+      <div class="arco-caja">
+        <div class="arco"><div class="ph" data-file="img/sobre-mi.jpg"><img src="img/sobre-mi.jpg" alt="Emily Sánchez" onerror="this.remove()"></div></div>
+      </div>
+      <div>
+        <p>Cuando era más pequeña, pensaba que el éxito era acumular logros: buenas notas, certificados, competencias. Con el tiempo entendí que los logros pueden abrir puertas, pero el propósito es lo que hace que la gente te recuerde. Esa idea inspiró mi marca personal.</p>
+        <p>Soy estudiante de Ciencias y participante orgullosa del Programa ¡Supérate! Alberto Motta. Si tuviera que describirme en tres palabras, elegiría creativa, empática y proactiva; no porque suenen impresionantes, sino porque han guiado cada decisión que he tomado.</p>
+        <p>Creo que el verdadero liderazgo no es ser la persona que más ruido hace en la sala. Es crear soluciones, construir confianza y dejar cada lugar un poco mejor de como lo encontraste.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="banda">
+  <div class="adorno"><i></i><svg><use href="#fl"/></svg><i></i></div>
+  <blockquote>“El silencio puede sentirse cómodo, pero el cambio nunca ha empezado con quienes se quedaron callados.”</blockquote>
+</div>
+
+<!-- ============ 02 HABILIDADES ============ -->
+<section id="habilidades">
+  <div class="wrap">
+    <div class="enc"><span>02</span><h2>Habilidades</h2></div>
+    <div class="grupo">
+      <h3>Técnicas</h3>
+      <div class="fila"><h4>Microsoft Office</h4><p>Incluyendo Excel a nivel experto.</p></div>
+      <div class="fila"><h4>Canva</h4><p>Para presentar proyectos de forma creativa y profesional.</p></div>
+      <div class="fila"><h4>Inteligencia Artificial</h4><p>Para organizar información, analizar datos y comunicar ideas con claridad.</p></div>
+    </div>
+    <div class="grupo">
+      <h3>Personales</h3>
+      <div class="fila"><h4>Pensamiento crítico</h4><p>Preguntarme “¿cómo se puede mejorar esto?”</p></div>
+      <div class="fila"><h4>Oratoria</h4><p>Comunicar ideas con claridad y seguridad.</p></div>
+      <div class="fila"><h4>Trabajo en equipo</h4><p>Escuchar, adaptarme y mantener el enfoque bajo presión, resolviendo problemas con otros.</p></div>
+    </div>
+    <div class="grupo">
+      <h3>Idiomas</h3>
+      <div class="fila idiomas"><b>Español</b><span>Nativo</span><b>Inglés</b><span>En constante mejora</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 03 CERTIFICACIONES ============ -->
+<section id="certificaciones" style="padding-top:0">
+  <div class="wrap">
+    <div class="enc"><span>03</span><h2>Certificaciones</h2></div>
+    <div class="certs">
+      <div class="cert"><i>I</i><h3>Microsoft Office Specialist</h3></div>
+      <div class="cert"><i>II</i><h3>Microsoft Excel Expert</h3></div>
+      <div class="cert"><i>III</i><h3>HP LIFE</h3><small>Conciencia sobre Ciberseguridad</small></div>
+      <div class="cert"><i>IV</i><h3>HP LIFE</h3><small>Pensamiento crítico en la era de la IA</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 04 TRAYECTORIA ============ -->
+<section id="experiencia" style="background:var(--paper)">
+  <div class="wrap">
+    <div class="enc"><span>04</span><h2>Trayectoria</h2></div>
+    <div class="linea">
+      <article class="hito">
+        <svg><use href="#fl"/></svg>
+        <div class="ph" data-file="img/investigacion.jpg"><img src="img/investigacion.jpg" alt="Investigación científica" onerror="this.remove()"></div>
+        <div><div class="lugar">Hackathon 2024 · Expo 2025</div><h3>Investigación, Hackathon y Expo</h3>
+        <p>Disfruto de verdad resolver problemas. Estos proyectos me enseñaron a pensar críticamente, colaborar con otros y convertir ideas en soluciones prácticas.</p></div>
+      </article>
+      <article class="hito">
+        <svg><use href="#fl"/></svg>
+        <div class="ph" data-file="img/fundacancer.jpg"><img src="img/fundacancer.jpg" alt="Fundacáncer" onerror="this.remove()"></div>
+        <div><div class="lugar">Voluntariado</div><h3>Fundacáncer</h3>
+        <p>El voluntariado me recordó que la amabilidad nunca es una acción pequeña. A veces, simplemente estar presente puede hacer que alguien se sienta apoyado y valorado.</p></div>
+      </article>
+      <article class="hito">
+        <svg><use href="#fl"/></svg>
+        <div class="ph" data-file="img/batallon.jpg"><img src="img/batallon.jpg" alt="Batallón Femenino" onerror="this.remove()"></div>
+        <div><div class="lugar">Liderazgo</div><h3>Batallón Femenino</h3>
+        <p>Formar parte del batallón me enseñó disciplina, compromiso y la importancia de trabajar por un propósito compartido.</p></div>
+      </article>
+      <article class="hito">
+        <svg><use href="#fl"/></svg>
+        <div class="ph" data-file="img/emprendimiento.jpg"><img src="img/emprendimiento.jpg" alt="Venta de snacks" onerror="this.remove()"></div>
+        <div><div class="lugar">10.º y 11.º grado · Emprendimiento</div><h3>Mi emprendimiento de snacks</h3>
+        <p>Empezó como una forma de ganar algo de dinero y se volvió una lección sobre planificar, entender las necesidades de las personas, administrar recursos y adaptarme bajo presión.</p></div>
+      </article>
+      <article class="hito">
+        <svg><use href="#fl"/></svg>
+        <div class="ph" data-file="img/superate.jpg"><img src="img/superate.jpg" alt="¡Supérate!" onerror="this.remove()"></div>
+        <div><div class="lugar">Programa Alberto Motta</div><h3>¡Supérate!</h3>
+        <p>Un programa que me sigue retando a crecer, a liderar y a usar lo que aprendo para marcar una diferencia.</p></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 05 GALERÍA ============ -->
+<section id="galeria">
+  <div class="wrap">
+    <div class="enc"><span>05</span><h2>Galería</h2></div>
+    <div class="galeria">
+      <div class="ph g1" data-file="img/galeria-1.jpg"><img src="img/galeria-1.jpg" alt="" onerror="this.remove()"></div>
+      <div class="ph g2" data-file="img/galeria-2.jpg"><img src="img/galeria-2.jpg" alt="" onerror="this.remove()"></div>
+      <div class="ph g3" data-file="img/galeria-3.jpg"><img src="img/galeria-3.jpg" alt="" onerror="this.remove()"></div>
+      <div class="ph g4" data-file="img/galeria-4.jpg"><img src="img/galeria-4.jpg" alt="" onerror="this.remove()"></div>
+      <div class="ph g5" data-file="img/galeria-5.jpg"><img src="img/galeria-5.jpg" alt="" onerror="this.remove()"></div>
+      <div class="ph g6" data-file="img/galeria-6.jpg"><img src="img/galeria-6.jpg" alt="" onerror="this.remove()"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 06 MI FUTURO ============ -->
+<section id="futuro" class="futuro-sec">
+  <div class="wrap">
+    <div class="enc"><span>06</span><h2>Mi futuro</h2></div>
+    <div class="futuro">
+      <div>
+        <p>No quiero solo lograr un éxito personal; quiero convertirme en alguien en quien la gente pueda confiar: alguien que aporte claridad cuando todo se complica, que mantenga la calma bajo presión, que cree oportunidades en lugar de esperarlas, y que nunca olvide que cada decisión tiene el poder de impactar a las personas, a las comunidades y a nuestro entorno.</p>
+        <ul class="metas"><li>Pasantías</li><li>Liderazgo</li><li>Investigación</li><li>Emprendimiento</li></ul>
+        <p class="cierre">Espero que me recuerden como alguien que resolvió problemas con inteligencia, lideró con amabilidad, inspiró a otros con acciones… y siempre dejó cada lugar un poco mejor de como lo encontró.</p>
+      </div>
+      <div class="arco-caja">
+        <div class="arco"><div class="ph" data-file="img/futuro.jpg"><img src="img/futuro.jpg" alt="Mi futuro" onerror="this.remove()"></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 07 MI HISTORIA ============ -->
+<section id="historia">
+  <div class="wrap">
+    <div class="enc"><span>07</span><h2>Mi historia</h2></div>
+    <!-- VIDEO: pega la URL del video en VIDEO_URL (más abajo, en el <script>) -->
+    <div class="marco"><div class="video-caja ph" id="video" data-file="Pega la URL de tu video en VIDEO_URL"></div></div>
+    <a class="enlace" href="https://canva.link/tvgwyyo0bkica6k" target="_blank" rel="noopener">Ver mi presentación en Canva →</a>
+  </div>
+</section>
+
+<!-- ============ 08 DEJA TU MENSAJE ============ -->
+<section id="contacto">
+  <div class="wrap">
+    <div class="enc"><span>08</span><h2>Deja tu mensaje</h2></div>
+    <div class="contacto-grid">
+      <div>
+        <!-- CAMBIA estos datos por los de Emily -->
+        <a class="dato" href="mailto:CORREO@ejemplo.com"><svg class="ic"><use href="#i-mail"/></svg><div><small>Correo</small><span class="t">CORREO@ejemplo.com</span></div></a>
+        <a class="dato" href="https://wa.me/50700000000"><svg class="ic"><use href="#i-chat"/></svg><div><small>WhatsApp</small><span class="t">+507 0000-0000</span></div></a>
+        <a class="dato" href="https://www.instagram.com/USUARIO"><svg class="ic"><use href="#i-cam"/></svg><div><small>Instagram</small><span class="t">@USUARIO</span></div></a>
+        <div class="dato"><svg class="ic"><use href="#i-pin"/></svg><div><small>Ubicación</small><span class="t">Panamá</span></div></div>
+      </div>
+      <!-- Pon el correo de Emily en "action" (reemplaza CORREO@ejemplo.com). La primera vez te llegará un correo para confirmar. -->
+      <form action="https://formsubmit.co/CORREO@ejemplo.com" method="POST">
+        <input type="hidden" name="_subject" value="Nuevo mensaje desde mi portafolio">
+        <input type="text" name="nombre" placeholder="Tu nombre" required>
+        <input type="email" name="email" placeholder="Tu correo" required>
+        <textarea name="mensaje" rows="5" placeholder="Tu mensaje" required></textarea>
+        <button class="btn" type="submit">Enviar mensaje</button>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="nombre">Emily Sánchez</div>
+  <div class="adorno"><i></i><svg><use href="#fl"/></svg><i></i></div>
+  <p>Dejando cada lugar un poco mejor de como lo encontré.</p>
+  <p style="margin-top:14px;font-size:.8rem">© 2026 Emily Sánchez. Todos los derechos reservados.</p>
+</footer>
+
+<script>
+/* ===== VIDEO: pega aquí la URL entre las comillas (YouTube normal o youtu.be; también sirve un enlace "embed") ===== */
+const VIDEO_URL = "";
+
+(function(){
+  if(!VIDEO_URL)return;
+  let u=VIDEO_URL.trim(),m;
+  if(m=u.match(/youtu\.be\/([\w-]{6,})/)||u.match(/[?&]v=([\w-]{6,})/)||u.match(/youtube\.com\/(?:embed|shorts)\/([\w-]{6,})/))
+    u='https://www.youtube.com/embed/'+m[1];
+  const f=document.createElement('iframe');
+  f.src=u;f.title='Video';f.allowFullscreen=true;
+  f.referrerPolicy='strict-origin-when-cross-origin';
+  f.allow='accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen';
+  const c=document.getElementById('video');c.appendChild(f);c.removeAttribute('data-file');
+})();
+
+// Menú (móvil) y sección activa (escritorio)
+const bm=document.getElementById('btn-menu'),menu=document.getElementById('menu');
+bm.onclick=()=>{const a=menu.classList.toggle('abierto');bm.setAttribute('aria-expanded',a)};
+menu.querySelectorAll('a').forEach(a=>a.onclick=()=>{menu.classList.remove('abierto');bm.setAttribute('aria-expanded','false')});
+const enlaces=[...menu.querySelectorAll('a')];
+const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){
+  enlaces.forEach(a=>a.classList.toggle('activo',a.getAttribute('href')==='#'+e.target.id))}}),{rootMargin:'-40% 0px -55% 0px'});
+enlaces.forEach(a=>{const s=document.querySelector(a.getAttribute('href'));if(s)obs.observe(s)});
+
+// Flores que flotan por la pantalla
+(function(){
+  const j=document.getElementById('jardin'),col=['#d9a0b0','#ecc3cf','#c9889a','#e4c98a','#f0d5dc','#b8c9b9'];
+  const n=innerWidth<700?8:13,r=(a,b)=>a+Math.random()*(b-a);
+  for(let i=0;i<n;i++){
+    const s=r(20,44),d=document.createElement('div');d.className='fl';
+    d.style.left=r(0,96)+'%';d.style.animationDuration=r(24,42)+'s';d.style.animationDelay='-'+r(0,42)+'s';
+    d.innerHTML='<svg width="'+s+'" height="'+s+'" viewBox="0 0 100 100" style="color:'+col[i%col.length]+';animation-duration:'+r(5,9)+'s"><use href="#'+(i%2?'fl':'fp')+'"/></svg>';
+    j.appendChild(d);
+  }
+})();
+</script>
+</body>
+</html>
